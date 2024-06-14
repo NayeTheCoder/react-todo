@@ -2,32 +2,17 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import TodoList from './TodoList'
+import AddTodoForm from './AddTodoForm'
 
-var todoList = [
-  {
-  id: 1,
-  title:"Complete assignment"
-  },
-  {
-    id:2,
-    title:"Go to the gym"
-  },
-  {
-    id:3,
-    title:"pick up nephew"
-  }
-];
 
 
 function App() {
   return (
     <div className="App">
      <h1> Todo List</h1>
-      <ul>
-        {todoList.map(function (item) {
-        return <li key={item.id}>{item.title}</li>;
-        })}
-      </ul>
+      <TodoList/>
+      <AddTodoForm/>
     </div>
   );
 }
