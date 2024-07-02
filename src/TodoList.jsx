@@ -1,3 +1,4 @@
+import TodoListItem from './TodoListItem';
 
 var todoList = [
     {
@@ -17,8 +18,8 @@ var todoList = [
 function TodoList () {
     return(
         <ul>
-        {todoList.map(function (item) {
-        return <li key={item.id}>{item.title}</li>;
+        {todoList.map(function(item){
+          return <TodoListItem title={item.title}/>;
         })}
       </ul>
     );
