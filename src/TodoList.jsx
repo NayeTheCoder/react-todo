@@ -19,7 +19,9 @@ function TodoList () {
     return(
         <ul>
         {todoList.map(function(item){
-          return <TodoListItem title={item.title}/>;
+          return (
+            <TodoListItem key={item.id} title={item.title}/>   
+          );
         })}
       </ul>
     );

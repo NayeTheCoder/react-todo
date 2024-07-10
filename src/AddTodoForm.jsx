@@ -7,9 +7,9 @@ function AddTodoForm (props) {
        event.target[0].value ='';
     }
  return(
-    <form onSubmit={(handleAddTodo)}>
+    <form onSubmit={handleAddTodo}>
         <label htmlFor="todoTitle">Title</label>
-        <input attribute="title" id="todoTitle"></input>
+        <input name="title" id="todoTitle"></input>
         <button type="submit">Add</button>
     </form>
  );
