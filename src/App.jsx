@@ -1,23 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import TodoList from './TodoList'
-import AddTodoForm from './AddTodoForm'
+import { useState, useEffect, Fragment} from 'react';
+import './App.css';
+import TodoList from './TodoList';
+import AddTodoForm from './AddTodoForm';
 
 
+function useSemiPersistentState() {
+  const [todoList, setTodoList] = useState(() => {
+    const storedTodoList = JSON.parse(localStorage.getItem('storedTodoList'));
+     return storedTodoList ? storedTodoList : [];
+});
+
+  useEffect(() => {
+    localStorage.setItem('storedTodoList', JSON.stringify(todoList));
+    }, [todoList]); //this is the dependency. 
+
+  return [todoList, setTodoList]
+
+ } 
 
 function App() {
-  
-  const [newTodo, setNewTodo] =useState();
+  const [todoList, setTodoList] = useSemiPersistentState();
+
+  const addTodo = (newTodo) => {
+  setTodoList([...todoList, newTodo]);
+};
 
   return (
-    <div className="App">
+    <>
      <h1> Todo List</h1>
-      <TodoList/>
-      <AddTodoForm onAddTodo={setNewTodo}/>
-     <p> {newTodo}</p>
-    </div>
+      <TodoList todoList={todoList}/>
+      <AddTodoForm onAddTodo={addTodo}/>
+    </>
   );
 }
 
