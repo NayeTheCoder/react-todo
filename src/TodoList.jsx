@@ -1,29 +1,19 @@
+import React from 'react';
 import TodoListItem from './TodoListItem';
-
-var todoList = [
-    {
-    id: 1,
-    title:"Complete assignment"
-    },
-    {
-      id:2,
-      title:"Go to the gym"
-    },
-    {
-      id:3,
-      title:"pick up nephew"
-    }
-  ];
   
-function TodoList () {
+function TodoList ({ todoList, onRemoveTodo }) { // adding onRemoveTodo as a prop here
     return(
         <ul>
-        {todoList.map(function(item){
-          return (
-            <TodoListItem key={item.id} title={item.title}/>   
-          );
-        })}
+        {todoList.map(item => (
+            <TodoListItem
+               key={item.id}
+               title={item.title}   
+               id={item.id}  
+               onRemoveTodo={() => onRemoveTodo(item.id)}  // passes the callback with id
+          />
+        ))}
       </ul>
     );
 }
 export default TodoList;
+
