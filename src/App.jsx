@@ -4,23 +4,33 @@ import TodoList from './TodoList';
 import AddTodoForm from './AddTodoForm';
 
 
-//This is a custom hook that manages the 'todoList' state, loads data to localStorage and saves changes
-function useSemiPersistentState() {
-  const [todoList, setTodoList] = useState(() => {
-    const storedTodoList = JSON.parse(localStorage.getItem('storedTodoList'));
+function App() {
+    const [todoList, setTodoList] = useState(() => {
+    const storedTodoList = [];
      return storedTodoList ? storedTodoList : [];
 });
 
+const [isLoading, setIsLoading] = useState(true);
+
+ useEffect(() => {
+      const promiseThen = new Promise((resolve,reject) => {
+        setTimeout(() => {
+            resolve({data:{todoList:JSON.parse(localStorage.getItem('storedTodoList'))}});
+        }, 2000);
+      });
+      promiseThen
+        .then((data) => {
+          console.log(data)
+          setTodoList(JSON.parse(localStorage.getItem('storedTodoList')));
+          setIsLoading(false);
+        })
+    }, [] );
+
   useEffect(() => {
-    localStorage.setItem('storedTodoList', JSON.stringify(todoList));
+    if (isLoading === false) {
+          localStorage.setItem('storedTodoList', JSON.stringify(todoList));
+    }
     }, [todoList]); 
-
-  return [todoList, setTodoList]
-
- } 
-
-function App() {
-  const [todoList, setTodoList] = useSemiPersistentState();
 
   const addTodo = (newTodo) => {
   setTodoList([...todoList, { id: Date.now(), title: newTodo }]);
@@ -35,11 +45,12 @@ function App() {
 
   return (
     <>
+    {isLoading && <p>Loading...</p>}
      <h1> Todo List</h1>
       <AddTodoForm onAddTodo={addTodo}/>
       <TodoList todoList={todoList} onRemoveTodo={removeTodo}/>
     </>
-  );
+  )
 }
 
 
