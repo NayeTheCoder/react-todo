@@ -1,0 +1,9 @@
+.ListItem {
+    color:rgb(117, 118, 118);
+    margin-bottom: 1rem;
+}
+.Button {
+    margin-left:1rem;
+    font-size: small;
+    background-color: #99A080;
+}
