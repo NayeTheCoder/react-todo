@@ -20,7 +20,7 @@ function AddTodoForm ({onAddTodo}) {
          todoTitle={todoTitle}
          handleTitleChange={handleTitleChange}
       />
-        <button type="submit">Add</button>
+        <button type="submit" style={{"margin-left":"0.5rem"}}>Add</button>
     </form>
  );
 };
