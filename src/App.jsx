@@ -15,7 +15,7 @@ function App() {
 
   // async function
   async function fetchData() {
-    const url = `https://api.airtable.com/v0/${import.meta.env.VITE_AIRTABLE_BASE_ID}/${import.meta.env.VITE_TABLE_NAME}`;
+    const url = `https://api.airtable.com/v0/${import.meta.env.VITE_AIRTABLE_BASE_ID}/${import.meta.env.VITE_TABLE_NAME}?view=Grid%20view`;
     const options = {
       method: 'GET',
       headers: {
@@ -38,10 +38,19 @@ function App() {
       // Transform and set the todo list
       // this code takes data.records array from Airtable and maps the record into a new object with
       // id and title
-      // makes it compatible with how my app and showing this list
+      // makes it compatible with my app and showing this list
+      data.records.sort((objectA, objectB)=>{
+        if (objectA.fields.Title < objectB.fields.Title){
+          return 1;
+        }
+        else if (objectA.fields.Title > objectB.fields.Title){
+          return -1;
+        }
+        return 0;
+      })
       const todos = data.records.map(record => ({
         id: record.id,
-        title: record.fields.title,
+        title: record.fields.Title,
       }));
 
       setTodoList(todos);
