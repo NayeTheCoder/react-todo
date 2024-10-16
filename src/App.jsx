@@ -64,7 +64,7 @@ function App() {
   useEffect(() => {
     const today = new Date();
     const formattedDate = today.toLocaleDateString("en-US", {
-      weekday: "long", // This will show the full day of the week
+      weekday: "long",
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -157,7 +157,7 @@ function App() {
             }
           />
           <Route
-            path="/home"
+            path="/home" /* New list with same format */
             element={
               <>
                 <h1>New Todo List</h1>

@@ -1,22 +1,35 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-function InputWithLabel({...props}) {
- const inputRef = useRef()
-    useEffect(() => {
-      inputRef.current.focus();
-    }, []);
-    return (
+function InputWithLabel({ todoTitle, handleTitleChange }) {
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  return (
     <>
-    <label htmlFor="todoTitle">{props.todoTitle}</label>
-        <input 
+      <label htmlFor="todoTitle">Title</label>
+      <input 
+        type="text" 
         name="title" 
         id="todoTitle"
         ref={inputRef}
-        onChange={props.handleTitleChange}
-        />
-        </>
+        onChange={handleTitleChange}
+        value={todoTitle} 
+      />
+    </>
   );
+}
+
+InputWithLabel.propTypes = {
+  todoTitle: PropTypes.string.isRequired,        
+  handleTitleChange: PropTypes.func.isRequired,  
+};
+
+export default InputWithLabel;
+
 }
 
 InputWithLabel.propTypes = {
