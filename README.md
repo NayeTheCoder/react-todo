@@ -30,7 +30,7 @@ Ensure you have the following installed on your machine:
 2. Clone the repository using the following command:
 
    ```bash
-   git clone  (WILL ADD URL)
+   git clone https://github.com/NayeTheCoder/react-todo
 
 
 ## Status 

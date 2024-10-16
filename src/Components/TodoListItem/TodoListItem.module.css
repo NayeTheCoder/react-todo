@@ -23,7 +23,7 @@
 /* Responsive styles */
 @media only screen and (max-width: 600px) {
     .ListItem {
-      padding: 0.5em; /* Reduced padding for smaller screens */
+      padding: 0.5em; 
     }
     
     .TaskTitle {
@@ -31,7 +31,7 @@
     }
   
     .Button {
-      padding: 0.4em 0.8em; /* Adjust button padding */
-      font-size: 0.8em; /* Smaller font size for button */
+      padding: 0.4em 0.8em; 
+      font-size: 0.8em; 
     }
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TodoListItem from './TodoListItem';
   
-function TodoList ({ todoList, onRemoveTodo }) { // adding onRemoveTodo as a prop here
+function TodoList ({ todoList, onRemoveTodo }) { /* adding onRemoveTodo as a prop here */
     return(
         <ul>
         {todoList.map(item => (
@@ -10,7 +10,7 @@ function TodoList ({ todoList, onRemoveTodo }) { // adding onRemoveTodo as a pro
                key={item.id}
                title={item.title}   
                id={item.id}  
-               onRemoveTodo={() => onRemoveTodo(item.id)}  // passes the callback with id
+               onRemoveTodo={() => onRemoveTodo(item.id)}  /* passes the callback with id  */
           />
         ))}
       </ul>
