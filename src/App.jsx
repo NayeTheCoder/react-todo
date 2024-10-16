@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment } from 'react';
-import './App.css';
-import TodoList from './TodoList';
-import AddTodoForm from './AddTodoForm';
+import './components/App.css';
+import TodoList from './components/TodoList';
+import AddTodoForm from './components/AddTodoForm';
 import {BrowserRouter, Routes, Route, Router } from "react-router-dom";
 
 

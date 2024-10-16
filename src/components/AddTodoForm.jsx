@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import InputWithLabel from './InputWithLabel';
+import PropTypes from 'prop-types';
 
 function AddTodoForm ({onAddTodo}) {
    const [todoTitle, setTodoTitle] = useState('');
@@ -12,6 +13,11 @@ function AddTodoForm ({onAddTodo}) {
       onAddTodo(todoTitle);
       setTodoTitle('');
     }
+
+    AddTodoForm.propTypes = {
+      onAddTodo: PropTypes.func.isRequired, 
+    };
+
 
  return (
     <form onSubmit={handleAddTodo}>
