@@ -1,0 +1,37 @@
+    .ListItem {
+        padding: 7px;
+        margin: 5px 0;
+        background-color: #41454b;
+        border-radius: 5px;
+    }
+    
+    .Button {
+        margin-left: 10px;
+        padding: 5px;
+        color: white;
+        background-color: rgb(176, 15, 15);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+.TaskTitle {
+    font-size: 1em; 
+    color: rgb(217, 217, 223); 
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    .ListItem {
+      padding: 0.5em; 
+    }
+    
+    .TaskTitle {
+      font-size: 1.2em; /* Smaller font size for task titles */
+    }
+  
+    .Button {
+      padding: 0.4em 0.8em; 
+      font-size: 0.8em; 
+    }
+  }

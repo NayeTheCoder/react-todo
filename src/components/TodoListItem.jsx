@@ -6,7 +6,11 @@ function TodoListItem ({title, id, onRemoveTodo}) {
   return (
   <li className={style.ListItem}>
     {title}
-    <button type="button" onClick={() =>  onRemoveTodo(id)} className={style.Button}>X</button>
+    <button type="button" 
+    onClick={() =>  onRemoveTodo(id)} 
+    className={style.Button}
+    aria-label={`Remove task: ${title}`}
+    >X</button>
     </li>
   );
 }

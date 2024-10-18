@@ -1,0 +1,174 @@
+/* Root Styles */
+:root {
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.5;
+  font-weight: 800;
+
+  color-scheme: light dark;
+  color: rgba(92, 88, 88, 0.87);
+  background-color: #2E2634;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Link Styles */
+a {
+  font-weight: 500;
+  color: #f7f7f9;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #584769;
+}
+
+/* Body Styles */
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Heading Styles */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: white; 
+}
+
+/* Button Styles */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 700;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Date Display Styles */
+.date-display {
+  color: #76707f; 
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 3.5em; /* for large screens */
+  font-weight: bold; 
+}
+
+
+/* Keyframes for Logo Spin */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation Preferences */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card Styles */
+.card {
+  padding: 2em;
+}
+
+/* Read The Docs Styles */
+.read-the-docs {
+  color: black;
+}
+
+/* Todo List Styles */
+.TodoList {
+  list-style-type: none; 
+  padding: 0;            
+  margin: 0;           
+}
+
+
+/* Individual Todo List Item Styles */
+.ListItem {
+  padding: 0.5em 1em; /* Use relative units for padding */
+  border: 1px solid #ccc; 
+  margin: 0.5em 0;   
+  width: 100%; 
+  box-sizing: border-box; 
+  font-size: 1rem;  
+  background-color: #fff; 
+  transition: font-size 0.2s ease; 
+}
+
+/* Responsive Styles for Todo List Items */
+@media (max-width: 900px) {
+  .ListItem {
+    font-size: 0.9rem;  /* for medium screens */
+    padding: 0.4em 0.8em;
+  }
+}
+
+@media (max-width: 600px) {
+  .ListItem {
+    font-size: 0.8rem;  /* for small screens */
+    padding: 0.3em 0.6em; 
+  }
+}
+
+/* Light Color Scheme */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #9990A0;
+  }
+  button {
+    background-color: #BEB6C3;
+  }
+}
+
+/* Responsive Styles for Small Screens */
+@media only screen and (max-width: 1200px) {
+  .date-display {
+    font-size: 3em; /* Slightly smaller for medium-large screens */
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .date-display {
+    font-size: 2.5em; /* Smaller for medium screens */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: #BEB6C3;
+    color: black;
+  }
+  h1 {
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.5em; 
+  }
+  .date-display {
+    font-size: 1.5em; /* small screens */
+  }
+}

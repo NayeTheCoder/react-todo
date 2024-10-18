@@ -33,14 +33,11 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: Black;
-}
 
 h1 {
   color: white;
 }
+
+
+
+/* I think this is being overriden - Looking into it */
